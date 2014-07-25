@@ -1,4 +1,4 @@
-**Code Challenge: Gibberish Generator**
+﻿**Code Challenge: Gibberish Generator**
 ---------------------------------------
 
 Challenge Overview
@@ -68,6 +68,8 @@ Coding Questions
 
 Question 1: "How did you approach the problem?" (500 words or less)
 
-
+I approached the problem quite easily. I figured out that the since I wanted to scramble the letters of the word without actually scrambling the first and last letter I would have to use a delimiter to cache each word of my string. So I used the StringTokenizer class to break up the strings into tokens for the words that I had in the string. When I initialized the StringTokenizer object, I made sure that when it is going through and breaking up the strings into tokens, it would make these characters in parentheses delimiters within my string (" ,.!?()-/&:;\""). Since an object of this class maintains a position with each token in the string, it allowed me to use the scramble method to create scrambled words based on the requirements. With each token I converted the word in my temp variable to characters. After that I made an ArrayList of characters and since the StringTokenizer object I created had set delimiters within my string, I was able to input each character of the token into my character array list. Once that was done, I used the Collections method in the Collections library to shuffle the letters within my array starting with index element 1 and the second to last index in the array. Once the shuffle was done I would convert the new array list into a string again. Once each token is done then I would combine my mix of scrambled words in the same sequential order they came in and output the value for the method. In the main part of the program I created options for the user so that they could enter the sentence or paragraph that they wanted to scramble in console or they could just use the text file that was attached within the project.
 
 Question 2: "What was the most difficult aspect of the solution?" (500 words or less)
+
+I think the most difficult aspect of my solution was making sure that the string was broken up by the words that I had in the string. It was kind of difficult trying to figure out what class I would use to do that which is why I made used the StringTokenizer class. Once I had done that I had to make sure that each token, which is each word, was inserted correctly into my character ArrayList and once that was done, it was easy coverting the token into characters. The other difficult portion was making sure that I allowed the user to scramble the words the entered through the console and also that my method was able to convert and scramble strings of lines it read from a file. Getting the filereader to work was a bit of hassle but I was able to work a solution and create a try/catch clause that would allow me to let the user know that the file was unable to be read because it was not found (hence my fileNotFound exception in the main function declaration). Overall I think this was a somewhat simple code challenge. 
